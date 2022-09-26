@@ -23,7 +23,9 @@ export class AppComponent {
     }
     this.query = query.value;
     this.obsTrack = this.spotify.searchTrack(this.query);
-    this.obsTrack.subscribe((data) => this.results = data); 
+    this.obsTrack.subscribe((data) => {
+      this.results = data; 
+    console.log(data)})
   }
 }
 
