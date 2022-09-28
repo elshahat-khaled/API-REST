@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { SpotifyService } from '../spotify.service';
 import { Observable } from 'rxjs';
+import {Location} from '@angular/common'
+
+
 
 @Component({
   selector: 'app-track',
@@ -21,7 +24,9 @@ export class TrackComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
+    private location: Location,
     private service: SpotifyService ) { }
+    
 
 
   ngOnInit(): void {
@@ -41,9 +46,10 @@ export class TrackComponent implements OnInit {
   }
 
 
-  back()
-  {//DA FINIRE }
+  back() : void
+  {
+    this.location.back();
+  }
      
-}
 }
 
